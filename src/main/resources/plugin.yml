@@ -14,3 +14,4 @@ softdepend:
   - EvenMoreFish
   - CustomFishing
 api-version: 1.21
+folia-supported: true

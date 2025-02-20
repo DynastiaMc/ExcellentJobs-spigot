@@ -54,7 +54,7 @@ public class StatsManager extends AbstractManager<JobsPlugin> {
     }
 
     private void loadStats() {
-        this.plugin.runTask(task -> this.plugin.getServer().getOnlinePlayers().forEach(this::loadStats));
+        this.plugin.runTask(() -> this.plugin.getServer().getOnlinePlayers().forEach(this::loadStats));
     }
 
     private void loadStats(@NotNull Player player) {
@@ -79,7 +79,7 @@ public class StatsManager extends AbstractManager<JobsPlugin> {
     }
 
     public void handleJoin(@NotNull Player player) {
-        this.plugin.runTaskAsync(task -> this.loadStats(player));
+        this.plugin.runTaskAsync(() -> this.loadStats(player));
     }
 
     public void openStats(@NotNull Player player, @NotNull Job job) {
