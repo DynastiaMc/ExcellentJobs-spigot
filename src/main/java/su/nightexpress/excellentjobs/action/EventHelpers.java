@@ -1,5 +1,6 @@
 package su.nightexpress.excellentjobs.action;
 
+import com.github.Anon8281.universalScheduler.foliaScheduler.FoliaScheduler;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -298,7 +299,8 @@ public class EventHelpers {
 
         if (event.isShiftClick() || numberKey) {
             int has = Players.countItem(player, craft);
-            plugin.getServer().getScheduler().runTask(plugin, () -> {
+
+            new FoliaScheduler(plugin).runTask(player, () -> {
                 int now = Players.countItem(player, craft);
                 int crafted = now - has;
                 processor.progressObjective(player, type, crafted);
