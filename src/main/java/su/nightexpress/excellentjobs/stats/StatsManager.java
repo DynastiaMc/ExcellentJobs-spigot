@@ -41,7 +41,7 @@ public class StatsManager extends AbstractManager<JobsPlugin> {
 
         this.addListener(new StatsListener(this.plugin, this));
 
-        this.addTask(this.plugin.createAsyncTask(this::updateJobLevelsAndEmployees).setSecondsInterval(Config.STATISTIC_UPDATE_INTERVAL.get()));
+        this.addAsyncTask(this::updateJobLevelsAndEmployees, Config.STATISTIC_UPDATE_INTERVAL.get());
     }
 
     @Override

@@ -114,9 +114,9 @@ public class JobManager extends AbstractManager<JobsPlugin> {
         this.addListener(new JobGenericListener(this.plugin, this));
         this.addListener(new JobExploitListener(this.plugin));
 
-        this.addTask(this.plugin.createAsyncTask(this::payForJob).setSecondsInterval(Config.GENERAL_PAYMENT_INTERVAL.get()));
+        this.addAsyncTask(this::payForJob, Config.GENERAL_PAYMENT_INTERVAL.get());
         if (Config.GENERAL_PROGRESS_BAR_ENABLED.get()) {
-            this.addTask(this.plugin.createAsyncTask(this::tickProgressBars).setSecondsInterval(1));
+            this.addAsyncTask(this::tickProgressBars, 1);
         }
     }
 

@@ -43,7 +43,7 @@ public class BoosterManager extends AbstractManager<JobsPlugin> {
 
         this.addListener(new BoosterListenerGeneric(this.plugin));
 
-        this.addTask(this.plugin.createAsyncTask(this::updateGlobal).setSecondsInterval(30));
+        this.addAsyncTask(this::updateGlobal, 30);
     }
 
     @Override
