@@ -63,12 +63,14 @@ public class EventHelpers {
         if (nameSource.equalsIgnoreCase(nameResult)) return false;
 
         Player player = (Player) event.getWhoClicked();
-        plugin.runTask(() -> {
+
+        new FoliaScheduler(plugin).runTask(player, () -> {
             ItemStack result2 = anvil.getItem(2);
             if (result2 != null && !result2.getType().isAir()) return;
 
             processor.progressObjective(player, result.getType(), result.getAmount());
         });
+
         return true;
     };
 
@@ -102,7 +104,7 @@ public class EventHelpers {
         Player player = (Player) event.getWhoClicked();
         Material material = result.getType();
 
-        plugin.runTask(() -> {
+        new FoliaScheduler(plugin).runTask(player, () -> {
             ItemStack result2 = anvil.getItem(2);
             if (result2 != null && !result2.getType().isAir()) return;
 
@@ -383,7 +385,7 @@ public class EventHelpers {
         int uses = recipe.getUses();
         int userHas = Players.countItem(player, result);
 
-        plugin.runTask(() -> {
+        new FoliaScheduler(plugin).runTask(player, () -> {
             int uses2 = recipe.getUses();
             if (uses2 <= uses) return;
 
@@ -415,7 +417,7 @@ public class EventHelpers {
 
         int[] slots = new int[]{0, 1, 2};
 
-        plugin.runTask(() -> {
+        new FoliaScheduler(plugin).runTask(player, () -> {
             for (int slot : slots) {
                 ItemStack item = inventory.getItem(slot);
                 if (item == null || item.getType().isAir()) continue;

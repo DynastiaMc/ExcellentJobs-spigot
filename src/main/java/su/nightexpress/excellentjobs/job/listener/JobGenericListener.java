@@ -1,5 +1,6 @@
 package su.nightexpress.excellentjobs.job.listener;
 
+import com.github.Anon8281.universalScheduler.foliaScheduler.FoliaScheduler;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BrewingStand;
@@ -68,7 +69,7 @@ public class JobGenericListener extends AbstractListener<JobsPlugin> {
         ItemStack itemStack = player.getInventory().getItem(slot);
         if (itemStack == null || itemStack.getType() != Material.GLASS_BOTTLE) return;
 
-        this.plugin.runTask(() -> {
+        new FoliaScheduler(plugin).runTask(player, () -> {
             ItemStack honey = player.getInventory().getItem(slot);
             if (honey == null || honey.getType() != Material.HONEY_BOTTLE) return;
 
