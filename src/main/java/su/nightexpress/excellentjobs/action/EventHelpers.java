@@ -1,6 +1,5 @@
 package su.nightexpress.excellentjobs.action;
 
-import com.github.Anon8281.universalScheduler.foliaScheduler.FoliaScheduler;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -32,6 +31,7 @@ import su.nightexpress.excellentjobs.hook.impl.EvenMoreFishHook;
 import su.nightexpress.excellentjobs.hook.impl.LevelledMobsHook;
 import su.nightexpress.excellentjobs.hook.impl.MythicMobsHook;
 import su.nightexpress.excellentjobs.job.JobManager;
+import su.nightexpress.nightcore.universalscheduler.foliaScheduler.FoliaScheduler;
 import su.nightexpress.nightcore.util.*;
 import su.nightexpress.nightcore.util.blocktracker.PlayerBlockTracker;
 

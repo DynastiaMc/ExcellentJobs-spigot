@@ -1,6 +1,5 @@
 package su.nightexpress.excellentjobs.job.listener;
 
-import com.github.Anon8281.universalScheduler.foliaScheduler.FoliaScheduler;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BrewingStand;
@@ -23,6 +22,7 @@ import su.nightexpress.excellentjobs.api.event.bukkit.PlayerCollectedHoneyEvent;
 import su.nightexpress.excellentjobs.config.Keys;
 import su.nightexpress.excellentjobs.job.JobManager;
 import su.nightexpress.nightcore.manager.AbstractListener;
+import su.nightexpress.nightcore.universalscheduler.foliaScheduler.FoliaScheduler;
 import su.nightexpress.nightcore.util.PDCUtil;
 
 public class JobGenericListener extends AbstractListener<JobsPlugin> {
